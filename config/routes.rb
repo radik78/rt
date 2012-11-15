@@ -1,8 +1,8 @@
 Rt::Application.routes.draw do
 
   get "page/home"
-
   resources :users
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

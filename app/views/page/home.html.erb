@@ -1,2 +1,10 @@
 <h1>Page#home</h1>
 <p>Find me in app/views/page/home.html.erb</p>
+
+<%= form_for(:user, :url => sessions_path )  do  |f| %>
+<%= 	f.label :email						 %>
+<%= 	f.text_field :email					 %>
+<%= 	f.submit :ok						 %>
+<% 	end										 %>
+<%= link_to	'регистрация', new_user_path	 %>			
+
