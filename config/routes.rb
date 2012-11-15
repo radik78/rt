@@ -1,17 +1,6 @@
 Rt::Application.routes.draw do
-  get "users/index"
 
-  get "users/show"
-
-  get "users/new"
-
-  get "users/create"
-
-  get "users/edit"
-
-  get "users/update"
-
-  get "users/destroy"
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,6 +52,8 @@ Rt::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  
+  root :to => 'users#index'
 
   # See how all your routes lay out with "rake routes"
 
