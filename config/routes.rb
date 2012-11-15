@@ -1,5 +1,7 @@
 Rt::Application.routes.draw do
 
+  get "page/home"
+
   resources :users
 
   # The priority is based upon order of creation:
@@ -53,7 +55,7 @@ Rt::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   
-  root :to => 'users#index'
+  root :to => 'page#home'
 
   # See how all your routes lay out with "rake routes"
 
