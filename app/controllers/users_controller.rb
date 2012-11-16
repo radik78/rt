@@ -9,10 +9,16 @@ class UsersController < ApplicationController
 	@user = User.new
   end
 
+
   def create
 	@user = User.new params[:user]
-	@user.save
+	if @user.save_in_database
+		@message = 'congratulations! you saved in database!'
+	else
+		@message = '! trobble in database !'
+	end
   end
+
 
   def edit
   end
