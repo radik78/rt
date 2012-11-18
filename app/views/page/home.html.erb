@@ -1,10 +1,29 @@
-<h1>Page#home</h1>
-<p>Find me in app/views/page/home.html.erb</p>
+<h1>Любий друже, запрошуємо тебе на сайт групи РТ-95-2</h1>
+<p>для входа заполниете поля E-mail и Password: </p>
 
 <%= form_for(:user, :url => sessions_path )  do  |f| %>
-<%= 	f.label :email						 %>
-<%= 	f.text_field :email					 %>
-<%= 	f.submit :ok						 %>
+	<table>
+		<tr>
+			<td><%= 	f.label 'E-mail'				%></td>
+			<td><%= 	f.text_field :email			%></td>
+		</tr>
+		<tr>
+			<td><%= 	f.label :password			%></td>
+			<td><%= 	f.password_field :password	%></td>
+		</tr>
+		<tr>
+			<td><%=%></td>
+			<td><%= 	f.submit :ok				%></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><%= link_to	'регистрация', new_user_path	%>	</td>
+		</tr>
+
+
+	</table>
+
+
 <% 	end										 %>
-<%= link_to	'регистрация', new_user_path	 %>			
+		
 

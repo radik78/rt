@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 	if @user.save_in_database
 		@message = 'congratulations! you saved in database!'
 	else
-		@message = '! trobble in database !'
+		@message = '! trobble in database (probably, uncorrect parametrs of user) !'
 	end
   end
 

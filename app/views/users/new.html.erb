@@ -1,22 +1,28 @@
-<p>Users#new</p>
-<p>Find me in app/views/users/new.html.erb</p>
+# coding: utf-8
+<p>для регистрации заполните форму: </p>
 
 <%= form_for(@user)  do |f|			%>
-
-<%= f.label :name					%>
-<%= f.text_field :name				%>	</br> </br>
-
-<%= f.label :email					%>
-<%= f.text_field :email				%>	</br> </br>
-
-
-<%= f.label :password					%>
-<%= f.password_field :password				%>	</br> </br>
-
-<%= f.label :password_confirmation					%>
-<%= f.password_field :password_confirmation				%>	</br> </br>
-
-
-<%= f.submit						%>	</br> </br>
+	<table>
+		<tr>
+			<td><%= f.label 'имя (фио или ник):'					%></td>
+			<td><%= f.text_field :name				%></td>
+		</tr>
+		<tr>
+			<td><%= f.label 'е-mail:'					%></td>
+			<td><%= f.text_field :email				%></td>
+		</tr>
+		<tr>
+			<td><%= f.label 'пароль:'					%></td>
+			<td><%= f.password_field :password				%></td>
+		</tr>
+		<tr>
+			<td><%= f.label 'еще раз пароль:'					%></td>
+			<td><%= f.password_field :password_confirmation				%></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><%= f.submit 'создать'						%></td>
+		</tr>
+	</table>
 
 <%	end								%>
