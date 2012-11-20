@@ -5,6 +5,17 @@ source 'http://rubygems.org'
   gem 'gravatar_image_tag', '1.0.0.pre2'
   gem 'will_paginate', '3.0.pre2'
 
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+ # gem 'therubyracer'
+ # gem 'sass-rails', "  ~> 3.1.0"
+ # gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+
 group :development do
   gem 'rspec-rails', '2.6.1'
   gem 'sqlite3', '1.3.4'
