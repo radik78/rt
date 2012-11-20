@@ -2,10 +2,11 @@
 class SessionsController < ApplicationController
 	def create
 		if User.identificate(params[:user][:email], params[:user][:password])
-			@message = 'Welcome'
+			user = User.find_by_email(params[:user][:email])
+			flash[:success] = "#{user.name}, вы успешно зашли на сайт!"
 		else
-			flash[:error] = 'неверный пароль или логин (эту часть надо переделать)'
-			@message = 'неверный пароль или логин (эту часть надо переделать)'
+			flash[:error] = '! вы ввели неверный пароль или e-mail'
+			redirect_to :home
 		end
 	end
 	
