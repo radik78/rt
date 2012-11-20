@@ -1,0 +1,20 @@
+# coding: utf-8
+
+
+<%= form_for(@message)  do |f|			%>
+	<table>
+		<tr><td></td><td></td>	</tr>
+		<tr><td>напишите ваше сообщение: </td><td></td>	</tr>
+		<tr><td></td><td></td>	</tr>
+		<tr>
+			<td><%= f.label 'message:'					%></td>
+			<td><%= f.text_arrea_field :message				%></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><%= f.submit 'создать'						%></td>
+		</tr>
+	</table>
+
+<%	end								%>

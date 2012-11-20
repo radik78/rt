@@ -9,9 +9,10 @@ source 'http://rubygems.org'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
- # gem 'therubyracer'
+ # gem 'execjs'
  # gem 'sass-rails', "  ~> 3.1.0"
  # gem 'coffee-rails', "~> 3.1.0"
+  gem 'therubyracer'
   gem 'uglifier'
 end
 

@@ -1,7 +1,10 @@
 Rt::Application.routes.draw do
 
+
 	get "page/home"
 	match '/home' , :to => 'page#home'
+	
+	resources :messages
 	resources :users
 	resources :sessions
 
