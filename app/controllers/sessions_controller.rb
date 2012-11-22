@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 			flash[:error] = '! вы ввели неверный пароль или e-mail'
 			redirect_to :home
 		end
+
 	end
 	
 end

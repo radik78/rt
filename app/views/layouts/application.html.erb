@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Rt</title>
-		<%= csrf_meta_tags %>
-		<%= render 'layouts/stylesheets' %>
-		<%= javascript_include_tag "application" %>
-
-</head>
-<body>
-
+	<head>
+  		<title>Rt</title>
+			<%= csrf_meta_tags %>
+			<%= render 'layouts/stylesheets' %>
+			<%= javascript_include_tag "application" %>
+	</head>
+	<body>
+		<div class="container">
+			<%= render 'layouts/header' %>
+			<section class='round'>
 				<% flash.each do |key, value| %>
-					<div class="flash <%= key %>"><%= value %></div>
-        		<% end %>
-		        <%= yield %>
-
-</body>
+						<div class="flash <%= key %>"><%= value %></div>
+	        	<% end %>
+			    <%= yield %>
+		    </section>
+		    <%= render 'layouts/footer' %>
+		</div>
+	</body>
 </html>
 
 

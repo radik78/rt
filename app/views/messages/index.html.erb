@@ -1,8 +1,24 @@
 
-<table>
-<% @messages.each do |msg| 													%>
-<div>
-<%= 	"created at: #{msg.created_at}  with: #{msg.text} "				 	%>
-</div>
-<% end							 											%>
+
+	<% @messages.each do |msg| 													%>
+		<div class="container">
+			<p class="round" class="rcolor">
+					<%= "created at: #{msg.created_at} "		 %>
+					<%= msg.text	 %>
+			</p>		
+		</div>
+
+	<% end							 											%>
+
+
+
+
+
+		
+		
+		
+			
+		
+
+    
 
