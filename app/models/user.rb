@@ -13,6 +13,7 @@
 
 class User < ActiveRecord::Base
 
+	has_many  :messages
 	attr_accessor :password
 
 	validates :password,
