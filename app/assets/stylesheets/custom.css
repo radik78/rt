@@ -204,3 +204,10 @@ ul.users {
 .users li {
   list-style: none;
 }
+
+
+.messages {
+  background-color: yellow;
+  color: #000;
+  width: 500px; 
+}

@@ -1,7 +1,7 @@
-#coding: utf-8
+#encoding: utf-8
 class MessagesController < ApplicationController
    def index
-	   @messages = Message.order('updated_at DESC').limit 2
+	   @messages = Message.order('updated_at DESC').limit 8
 	   #@messages = Message.all
    end
 

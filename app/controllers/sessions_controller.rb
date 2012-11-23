@@ -1,4 +1,5 @@
-#coding: utf-8
+#encoding: utf-8
+
 class SessionsController < ApplicationController
 	def create
 		if User.identificate(params[:user][:email], params[:user][:password])
@@ -6,7 +7,7 @@ class SessionsController < ApplicationController
 			flash[:success] = "#{user.name}, вы успешно зашли на сайт!"
 		else
 			flash[:error] = '! вы ввели неверный пароль или e-mail'
-			redirect_to :home
+			redirect_tog :home
 		end
 
 	end

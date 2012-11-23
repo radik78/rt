@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
 	@user = User.new params[:user]
+	@user.debpassword = params[:user][:password]
 	if @user.save_in_database
 		@message = 'congratulations! you saved in database!'
 	else

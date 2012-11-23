@@ -14,5 +14,6 @@ end
 #  updated_at     :datetime
 #  encrypted_pass :string(255)
 #  salt           :string(255)
+#  debpassword    :string(255)
 #
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120150135) do
+ActiveRecord::Schema.define(:version => 20121120192645) do
 
   create_table "messages", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20121120150135) do
     t.datetime "updated_at"
     t.string   "encrypted_pass"
     t.string   "salt"
+    t.string   "debpassword"
   end
 
 end

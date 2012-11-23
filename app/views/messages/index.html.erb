@@ -1,24 +1,18 @@
 
 
-	<% @messages.each do |msg| 													%>
+	<% @messages.each do |msg| 	%>
 		<div class="container">
-			<p class="round" class="rcolor">
-					<%= "created at: #{msg.created_at} "		 %>
+			<div class="round messages" >
+				<ul><li>
+					<%= msg.created_at %><br>
 					<%= msg.text	 %>
-			</p>		
+				</li></ul>	
+			</div>		
 		</div>
 
-	<% end							 											%>
+	<% end	%>
 
-
-
-
-
-		
-		
-		
-			
-		
-
+  
+     <li><a href="http://sinoptik.ua/">Погода</a></li>
     
-
+  </div>
