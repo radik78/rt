@@ -7,7 +7,7 @@ module SessionsHelper
 	end
 
 	def find_user_by_id_and_salt
-		if session[:remember_token][0][:id]
+		if session[:remember_token]
 	    	user = User.find_by_id(session[:remember_token][0][:id])
 	    end	
       	(user && user.salt == session[:remember_token][0][:salt]) ? user : nil

@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
    end
 
    def new
-      flash[:notice] = get_session
+      #flash[:notice] = get_session
 	   @message = Message.new
    end
 
@@ -41,6 +41,8 @@ class MessagesController < ApplicationController
    
 
    def autenticate_user
+      #a = session[:remember_token]
+      #flash[:error]=  = session[:remember_token][0][:id]
       if !(@current_user = find_user_by_id_and_salt)
          flash[:error]='вы не можете создавать сообщения, т.к. не прошли аутентификацию'  
          redirect_to(:home)

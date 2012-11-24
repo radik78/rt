@@ -4,9 +4,8 @@
 		<div class="container">
 			<div class="round messages" >
 				<p class="small_bottom">
-					<div class = "time_mess "><%= msg.created_at %></div>
 					<% user = msg.user rescue User.find(msg.user_id) %>
-					<div class = "time_mess "><%= user.name %></div>
+					<div class = "time_mess "><%=user.name%> >>>>> <%=msg.created_at %></div>
 					<div class = "text_mess "><%= msg.text	 %></div>
 				</p>
 			</div>		
