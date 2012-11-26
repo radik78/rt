@@ -1,3 +1,4 @@
+#encoding: utf-8
 class UsersController < ApplicationController
   def index
   end
@@ -15,6 +16,8 @@ class UsersController < ApplicationController
 	@user.debpassword = params[:user][:password]
 	if @user.save_in_database
 		@message = 'congratulations! you saved in database!'
+    flash[:success] = 'примите поздравления! Теперь Вы можете...'
+    redirect_to messages_path
 	else
 		@message = '! trobble in database (probably, uncorrect parametrs of user) !'
 	end

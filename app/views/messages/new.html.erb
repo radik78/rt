@@ -4,16 +4,15 @@
 <%= form_for(@message)  do |f|			%>
 	<table>
 		<tr><td></td><td></td>	</tr>
-		<tr><td>напишите ваше сообщение: </td><td></td>	</tr>
-		<tr><td></td><td></td>	</tr>
+		<tr><td></td><td><%= f.label 'текст сообщния:'						%></td>	</tr>
 		<tr>
-			<td><%= f.label 'message:'						%></td>
+			<td></td>
 			<td><%= f.text_area :text, :size=>"60x12"	%></td>
 		</tr>
 
 		<tr>
 			<td></td>
-			<td><%= f.submit 'создать'						%></td>
+			<td><%= f.submit 'сохранить'						%></td>
 		</tr>
 	</table>
 

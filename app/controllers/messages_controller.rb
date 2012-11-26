@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
 
    def index
 	   @messages = Message.order('updated_at DESC').limit 8
-	   #@messages = Message.all
    end
 
    def show
@@ -13,13 +12,12 @@ class MessagesController < ApplicationController
    end
 
    def new
-      #flash[:notice] = get_session
 	   @message = Message.new
+      @title = 'Новое сообщение'
    end
 
    def create
-      message = Message.new(params[:message])
-      message.user_id = @current_user.id
+      @current_user.message = Message.new(params[:message])
       if message.save
          flash[:notice] = "сообщение было добавлено #{message.user_id}"
 	      redirect_to messages_path
@@ -41,9 +39,7 @@ class MessagesController < ApplicationController
    
 
    def autenticate_user
-      #a = session[:remember_token]
-      #flash[:error]=  = session[:remember_token][0][:id]
-      if !(@current_user = find_user_by_id_and_salt)
+      if !(find_user_by_id_and_salt)
          flash[:error]='вы не можете создавать сообщения, т.к. не прошли аутентификацию'  
          redirect_to(:home)
       end

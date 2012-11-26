@@ -2,10 +2,11 @@
 
 
 <%= form_for(@user)  do |f|			%>
+	<h2>регистрация</h2>
 	<table>
 		<tr><td></td><td></td>	</tr>
-		<tr><td>для регистрации заполните форму: </td><td></td>	</tr>
-		<tr><td></td><td></td>	</tr>
+	
+	
 		<tr>
 			<td><%= f.label 'имя (фио или ник):'					%></td>
 			<td><%= f.text_field :name				%></td>

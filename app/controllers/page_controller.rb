@@ -1,4 +1,7 @@
 class PageController < ApplicationController
+  
+  
+  
   def home
 	@user = User.new
 	respond_to do |format|
