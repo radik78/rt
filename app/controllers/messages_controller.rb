@@ -1,7 +1,7 @@
 #encoding: utf-8
 class MessagesController < ApplicationController
 
-   before_filter :autenticate_user, :only => [:new, :create]
+   before_filter :autenticate_user, :only => [:new, :create, :index]
 
    def index
 	   @messages = Message.order('updated_at DESC').limit 8

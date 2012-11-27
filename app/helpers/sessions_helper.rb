@@ -17,7 +17,7 @@ module SessionsHelper
 		if session[:remember_token]
 	    	@current_user = User.find_by_id(session[:remember_token][0][:id])
 	    end	
-      	(@current_user && @current_user.salt == session[:remember_token][0][:salt]) ? user : nil
+      	(@current_user && @current_user.salt == session[:remember_token][0][:salt]) ? @current_user : nil
       	@current_user = '1123456'
     end 
 
@@ -27,6 +27,10 @@ module SessionsHelper
 
     def debug_def
     	@current_user = 'd4'
+    end
+
+    def print_status
+    	@current_user ? 'Loged' : 'Non loged'
     end
 
 end
