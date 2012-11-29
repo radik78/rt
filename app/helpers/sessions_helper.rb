@@ -1,10 +1,9 @@
 module SessionsHelper
 	
-	attr_accessor  :signed_in, :debug_def
+	#attr_accessor  :signed_in
 
-
+	# проверяет сессию
 	def signed_in
-		#@current_user = 'asdfasdfasdf'
 		return @current_user
 	end
 
@@ -15,18 +14,24 @@ module SessionsHelper
 
 	def find_user_by_id_and_salt
 		if session[:remember_token]
-	    	@current_user = User.find_by_id(session[:remember_token][0][:id])
+	    	user = User.find_by_id(session[:remember_token][0][:id])
 	    end	
-      	(@current_user && @current_user.salt == session[:remember_token][0][:salt]) ? user : nil
-      	@current_user = '1123456'
+      	user = 
+      		user && 
+      		(user.salt == 
+      		session[:remember_token][0][:salt] ?
+      		user : nil)
+      	@current_user = user	
+      	
     end 
 
     def get_session
      	session[:remember_token][0]
     end 
 
-    def debug_def
-    	@current_user = 'd4'
+
+    def print_status_sign
+    	@current_user  ? 'Loged' : "Non loged"
     end
 
 end

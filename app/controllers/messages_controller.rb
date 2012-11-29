@@ -1,10 +1,11 @@
 #encoding: utf-8
 class MessagesController < ApplicationController
 
-   before_filter :autenticate_user, :only => [:new, :create]
+   before_filter :autenticate_user, :only => [:index, :new, :create]
 
    def index
 	   @messages = Message.order('updated_at DESC').limit 8
+      @title = 'Сообщения'
    end
 
    def show
@@ -17,9 +18,8 @@ class MessagesController < ApplicationController
    end
 
    def create
-      @current_user.message = Message.new(params[:message])
-      if message.save
-         flash[:notice] = "сообщение было добавлено #{message.user_id}"
+      if message = @current_user.messages.create(params[:message])
+         flash[:notice] = "#{message.user.name}, ваше сообщение было добавлено"
 	      redirect_to messages_path
       end   
     end

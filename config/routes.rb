@@ -1,12 +1,13 @@
 Rt::Application.routes.draw do
 
 
-	get "page/home"
+	
 	match '/home' , :to => 'page#home'
 	
 	resources :messages
-	resources :users
-	resources :sessions
+  resources :users
+  resources :sessions
+    match '/signout', :to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

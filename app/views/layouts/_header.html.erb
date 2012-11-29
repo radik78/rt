@@ -1,31 +1,13 @@
 <header>
-xx
-     <%=  debug_def %>
-    <%=  signed_in %>
-xx    
-
-    <% if signed_in %>
     
-        <nav class="round">
-        	<ul><li><%= link_to "Создать сообщение", new_message_path %></li></ul>
-        </nav>	
-        
+    <%= print_status_sign %>
+    <%=render 'layouts/links_in_header'%>
 
-        <nav class="round">
-        	<ul><li><%= link_to "Читать сообщения", messages_path %></li></ul>
-        </nav>	
-
-    <% else %>
-    
-        <nav class="round">
-        	<ul><li><%= link_to "регистрация", new_user_path %></li></ul>
-        </nav>
-        <nav class="round">
-            <ul><li><%= link_to "вход", '/home' %></li></ul>
-        </nav>
-    <% end %>
-
-	<div><h2></h2></div>
+	<div><h2><%=  request.fullpath %> </h2></div>
+	<div><h2><%=  request.method_symbol %> </h2></div>
+	<div><h2><%=  request.method %> </h2></div>
+	<div><h2><%=  request.request_method_symbol %> </h2></div>
+	
     <div><h2><%= @title %> </h2></div>
 
 </header>
