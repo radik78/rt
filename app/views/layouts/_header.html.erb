@@ -1,13 +1,14 @@
 <header>
-    
-    <%= print_status_sign %>
-    <%=render 'layouts/links_in_header'%>
 
-	<div><h2><%=  request.fullpath %> </h2></div>
-	<div><h2><%=  request.method_symbol %> </h2></div>
-	<div><h2><%=  request.method %> </h2></div>
-	<div><h2><%=  request.request_method_symbol %> </h2></div>
-	
+    <%=  print_status %>
+    <%= print_status_sign %>
+    
+    <%  links = link_hash  %>
+    <%  links.each do |link| %>
+        <nav class="round">
+            <ul><li><%= link_to link[:text], link[:path] %></li></ul>
+        </nav>  
+    <%  end                 %>
     <div><h2><%= @title %> </h2></div>
 
 </header>

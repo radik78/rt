@@ -1,6 +1,7 @@
 #encoding: utf-8
 class MessagesController < ApplicationController
 
+
    before_filter :autenticate_user, :only => [:index, :new, :create]
 
    def index
