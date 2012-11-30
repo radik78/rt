@@ -1,0 +1,10 @@
+
+============================== RSpec =====================================
+
+ вызовы:
+ visit '/static_pages/home'
+
+ проверки:
+ page.should have_content('Help')
+ response.status.should be(200)
+ page.should have_selector('title', :text => "Ruby on Rails Tutorial Sample App | Home")
