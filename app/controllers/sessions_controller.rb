@@ -16,15 +16,15 @@ class SessionsController < ApplicationController
 
 
 	def create
-		@global_message = User.identificate(params[:user][:email], params[:user][:password]) 
-		if @global_message == 'ok'
+		
+		if User.identificate(params[:user][:email], params[:user][:password]) 
 			user = User.find_by_email(params[:user][:email])
 			sign_in(user)
 			flash[:success] = "#{user.name}, вы успешно зашли на сайт!"
 			redirect_to messages_path
 		else
 			user = User.find_by_email(params[:user][:email])
-			flash[:error] = "! =============================  #{@global_message}"
+			flash[:error] = "! неверный логин или пароль !"
 			#redirect_to new_session_path
 			redirect_to new_session_path
 		end

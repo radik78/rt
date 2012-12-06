@@ -36,15 +36,13 @@ class User < ActiveRecord::Base
 
 	# проверяет, существует ли такой емэйл и пароль
 	def self.identificate(email, password)
-
-		@global_message = 'asdfasdf'
 		user = User.find_by_email(email)
 		if (!user.nil?)
 			if(User.encrypted_word(password, user.salt)==user.encrypted_pass)
-				return 'ok'
+				return user
 			end
 		end
-		return user.name+'===='+User.encrypted_word(password, user.salt)+'====='+user.encrypted_pass
+		return nil
 	end
 
 
