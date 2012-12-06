@@ -44,3 +44,11 @@ Spork.each_run do
   # This code will be run each time you run your specs.
 
 end
+
+
+def integration_sign_in (user)
+      visit new_session_path
+      fill_in :user_email, with: user.email
+      fill_in :user_password, with: user.password
+      click_button 
+end      

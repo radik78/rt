@@ -21,26 +21,37 @@ class User < ActiveRecord::Base
 		:confirmation => true,			# that automaticale create password_confirmation attribute
 		:length => {:within => 6..40}
 
+	validates :name,
+		:presence => true,
+		:length => {:within => 2..40}
 
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  	validates :email,
+		:presence    => true,
+		:format      => { :with => VALID_EMAIL_REGEX },
+		:uniqueness  => { :case_sensitive => false}
+
+	before_save :make_encrypt_password_and_salt
 
 
 	# проверяет, существует ли такой емэйл и пароль
 	def self.identificate(email, password)
+
+		@global_message = 'asdfasdf'
 		user = User.find_by_email(email)
 		if (!user.nil?)
 			if(User.encrypted_word(password, user.salt)==user.encrypted_pass)
-				return user
+				return 'ok'
 			end
 		end
-		return nil
+		return user.name+'===='+User.encrypted_word(password, user.salt)+'====='+user.encrypted_pass
 	end
 
 
-	# сохраняет пользователя, создав перед этим соль и хэш пароля
-	def save_in_database
+	# создает соль и хэш пароля (используется автоматически перед сохранением)
+	def make_encrypt_password_and_salt
 		self.salt = User.salt_generate(self.password)
 		self.encrypted_pass = User.encrypted_word(self.password, self.salt)
-		self.save
 	end
    	
 

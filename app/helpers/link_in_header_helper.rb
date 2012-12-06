@@ -15,7 +15,6 @@ module LinkInHeaderHelper
 
 
 
-
            #2 создаем массив:  | ключ| на основе текста ссылки
         req = request.fullpath
         need_links = []
