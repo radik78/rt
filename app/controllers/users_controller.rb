@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     redirect_to messages_path
 	else
 		@message = '! trobble in database (probably, uncorrect parametrs of user) !'
+    redirect_to new_user_path
 	end
   end
 

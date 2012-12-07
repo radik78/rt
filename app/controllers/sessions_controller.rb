@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
 	def new
 		@user = User.new
 		d = request.fullpath
+		@debug_var  = 'asdfasdf'
+		logger.debug "The post was saved and now the user is going to be redirected..."
 		respond_to do |format|
 		format.html
 		format.js {render :js=> "alert('hello');", :content_type=>'text/javascript'}
