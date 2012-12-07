@@ -32,7 +32,7 @@ group :development, :test do
   gem 'autotest-rails'
   gem 'capybara', '1.1.2'
   gem 'rb-inotify', '0.8.8'
-
+  gem 'ruby-debug19'
 end
 
 group :production do

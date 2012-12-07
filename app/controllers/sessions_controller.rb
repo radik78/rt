@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 		@user = User.new
 		d = request.fullpath
 		@debug_var  = 'asdfasdf'
+		debugger
 		logger.debug "The post was saved and now the user is going to be redirected..."
 		respond_to do |format|
 		format.html
