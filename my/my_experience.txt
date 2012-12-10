@@ -24,26 +24,10 @@
 
  gem 'ruby-debug19'
 
+$ lsof -wni tcp:3000
+
+$ kill -9 <<PID>>
+
+
  $ sudo gem install ruby-debug
 
-
- Don’t despair Mark Moseley has created all the necessary gems for you. You can install the ruby 1.9.1 and 1.9.2. compatible debugger and the debug ide with the following commands (thanks to Wayne’s exemplary documentation):
-
- gem install ruby-debug19 --with-ruby-include=$rvm_path/src/ruby-head/
- gem install ruby-debug-ide19 --with-ruby-include=$rvm_path/src/ruby-head/
-
- Now when you run
-
- rails server --debugger
-
- it still won’t be working, saying
- “You need to install ruby-debug to run the server in debugging mode.”
-
- So, as the last step, put this in your Gemfile
-
- gem ‘ruby-debug19′, :require => ‘ruby-debug’
-
- Run ‘bundle install’ if you feel like it, and now the debugger should work. However, the debugger will now start every time you start the server. 
-
- To start the server without the debugger, you’ll have to uncomment the line above in the Gemfile again.
- 
