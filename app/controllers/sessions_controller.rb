@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 		d = request.fullpath
 		@debug_var  = 'asdfasdf'
 		debugger
-		logger.debug "The post was saved and now the user is going to be redirected..."
+		logger.debug "Creating a form for new user"
 		respond_to do |format|
 		format.html
 		format.js {render :js=> "alert('hello');", :content_type=>'text/javascript'}
