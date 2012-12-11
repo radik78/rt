@@ -1,2 +1,3 @@
-<h1>TorrentLink#index</h1>
-<p>Find me in app/views/torrent_link/index.html.erb</p>
+<% @torrent_links.each do |trnt|%>
+<%= image_tag trnt.file.url %>
+<% end %>

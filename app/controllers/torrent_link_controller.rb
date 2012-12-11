@@ -2,6 +2,7 @@ class TorrentLinkController < ApplicationController
  
 
   def index
+    @torrent_links = TorrentLink.all
   end
 
   def new
