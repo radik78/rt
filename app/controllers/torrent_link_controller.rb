@@ -9,11 +9,8 @@ class TorrentLinkController < ApplicationController
   end
 
   def create
-
-	  	file = params[:torrent_link][:file]
-		File.open(Rails.root.join('app', 'assets/uploads', file.original_filename), 'wb') do |f|
-  			f.write(file.read)
-  		end
+      debugger
+      @torrent_link = TorrentLink.create( params[:torrent_link] )
   end	
   
 
