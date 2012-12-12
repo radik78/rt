@@ -5,8 +5,12 @@
 			<div class="round messages" >
 				<p class="small_bottom">
 					<% user = msg.user rescue User.find(msg.user_id) %>
-					<div class = "time_mess "><%=user.name%> >>>>> <%=msg.created_at %></div>
-					<div class = "text_mess "><%= msg.text	 %></div>
+					<div class = "time_mess ">
+						<%= "#{user.name} сообщил в #{msg.created_at}:" %>
+					</div>
+					<div class = "text_mess ">
+						<%= msg.text	 %>
+					</div>
 				</p>
 			</div>		
 		</div>

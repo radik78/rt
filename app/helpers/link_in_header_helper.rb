@@ -18,13 +18,29 @@ module LinkInHeaderHelper
 
 
            #2 создаем массив:  | ключ| на основе текста ссылки
-        req = request.fullpath
+
         need_links = []
+        need_links <<'Читать сообщения' <<'Создать сообщение' <<'Регистрация' <<'Разместить торрент' <<'Все торретны' 
+
+
+        req = request.fullpath
+        deny_links = []
+        deny_links <<'Вход'             <<'Создать сообщение'<<'Читать сообщения'   if req == '/sessions/new'   # ввод логина и пароля
+        deny_links <<'Регистрация'      <<'Создать сообщение'<<'Читать сообщения'   if req == '/users/new'      # регистрация
+        deny_links <<'Читать сообщения'     <<'Вход'<<'Регистрация'                 if req == '/messages'       # все сообщения
+        deny_links <<'Создать сообщение'    <<'Вход'<<'Регистрация'                 if req == '/messages/new'   # новое сообщение
+        deny_links <<'Разместить торрент'   <<'Вход'<<'Регистрация'                 if req == '/torrent_links/new'       # все сообщения
+        deny_links <<'Все торретны'         <<'Вход'<<'Регистрация'                 if req == '/torrent_links'   # новое сообщение
+
+
+        deny_links.each do |deny|
+          need_links.delete   deny
+        end
+
         
-        need_links <<'Регистрация'<<'Разместить торрент'<<'Все торретны'	if req == '/sessions/new'  	# ввод логина и пароля
-        need_links <<'Вход' 				 	if req == '/users/new'		# регистрация
-        need_links <<'Создать сообщение'  		if req == '/messages'		# все сообщения
-        need_links <<'Читать сообщения'  		if req == '/messages/new'	# новое сообщение
+        #need_links <<'Вход' 				 	if req == 
+        #need_links <<'Создать сообщение'  		
+        #need_links <<'Читать сообщения'  		
 
 
         #3 создаем массив хэшей с линками
@@ -36,6 +52,11 @@ module LinkInHeaderHelper
 		return arr_data_link	
 
 	end
+
+    def new_feedback
+        @feedback = Feedback.new
+    end 
+    
 
 end
 

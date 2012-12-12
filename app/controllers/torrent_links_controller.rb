@@ -1,11 +1,13 @@
 #encoding: utf-8
 
+
 class TorrentLinksController < ApplicationController
- 
+
+  before_filter :check_access   #, :only => [:index, :new, :create] 
 
   def index
     @torrent_links = TorrentLink.all
-    @title = 'Обзор ссылок'
+    @title = 'Обзор торрент ссылок'
   end
 
   def new
@@ -14,9 +16,11 @@ class TorrentLinksController < ApplicationController
   end
 
   def create
-      debugger
-      @torrent_link = TorrentLink.create( params[:torrent_link] )
-      @title = 'Торрент, возможно, загружен'
+      if torrent_link = @current_user.torrent_links.create(params[:torrent_link])
+         flash[:success] = "#{@current_user.name}, вашa торрент cсылка была добавлена"
+        redirect_to :torrent_links
+      end   
+
   end	
   
 

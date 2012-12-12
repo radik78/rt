@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 module SessionsHelper
 	
   	#attr_accessor  :signed_in
@@ -25,11 +27,15 @@ module SessionsHelper
 
 
     def print_status_sign
-      	@current_user  ? 'Loged' : "Non loged"
+      	@current_user  ? "Доброго времени суток, #{@current_user.name}! " : "Non loged"
     end
 
-    def print_status
-      	@current_user ? 'Loged' : 'Non loged'
-    end
+
+    def check_access
+      if !(find_user_by_id_and_salt)
+          flash[:error]='вы не можете создавать сообщения, т.к. не прошли аутентификацию'  
+        redirect_to(:home)
+      end  
+    end  
 
 end

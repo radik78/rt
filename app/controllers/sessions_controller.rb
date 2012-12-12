@@ -5,9 +5,6 @@ class SessionsController < ApplicationController
 	def new
 		@user = User.new
 		d = request.fullpath
-		@debug_var  = 'asdfasdf'
-		debugger
-		logger.debug "Creating a form for new user"
 		respond_to do |format|
 		format.html
 		format.js {render :js=> "alert('hello');", :content_type=>'text/javascript'}

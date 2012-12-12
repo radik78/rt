@@ -5,4 +5,16 @@
       <li><a href="http://sinoptik.ua/">Погода</a></li>
     </ul>
   </nav>
+
+  <% new_feedback %>
+
+  <br><br><br><br><br><br>
+  <%= form_for :feedback,  :url => feedbacks_path do |f| %>
+    <div>
+		  <%= f.label 'пожалуйста, опишите свои замечания (пожелания) по работе этой страницы: ' %>
+    </div>	
+  		<%= f.text_field :message %>
+  		<%= f.submit 'отправить пожелание' %>
+	<% end %>
+
 </footer>

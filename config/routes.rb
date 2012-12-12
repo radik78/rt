@@ -2,12 +2,17 @@ Rt::Application.routes.draw do
 
 
 	
+  get "feedbacks/index"
+
+  get "feedbacks/create"
+
   #get "torrent_link/index"
 
   #get "torrent_link/new"
 
 	match '/home' , :to => 'page#home'
-	resources :torrent_links
+	resources :feedbacks
+  resources :torrent_links
 	resources :messages
   resources :users
   resources :sessions

@@ -1,7 +1,7 @@
 <header>
 
-    <%=  print_status %>
-    <%= print_status_sign %>
+    
+    <div><%= print_status_sign if Rails.env.development? %></div>
     
     <%  links = link_hash  %>
     <%  links.each do |link| %>
