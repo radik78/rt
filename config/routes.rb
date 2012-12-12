@@ -7,7 +7,7 @@ Rt::Application.routes.draw do
   #get "torrent_link/new"
 
 	match '/home' , :to => 'page#home'
-	resources :torrent_link
+	resources :torrent_links
 	resources :messages
   resources :users
   resources :sessions

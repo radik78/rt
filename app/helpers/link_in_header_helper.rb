@@ -9,7 +9,9 @@ module LinkInHeaderHelper
             { :text=> 'Вход',                   :path => :new_session },
             { :text=> 'Читать сообщения',       :path => :messages },
             { :text=> 'Создать сообщение',      :path => :new_message },
-            { :text=> 'Регистрация',            :path => :new_user }
+            { :text=> 'Регистрация',            :path => :new_user },
+            { :text=> 'Разместить торрент',     :path => :new_torrent_link },
+            { :text=> 'Все торретны',           :path => :torrent_links }
         ]
 
 
@@ -19,7 +21,7 @@ module LinkInHeaderHelper
         req = request.fullpath
         need_links = []
         
-        need_links <<'Регистрация'			  	if req == '/sessions/new'  	# ввод логина и пароля
+        need_links <<'Регистрация'<<'Разместить торрент'<<'Все торретны'	if req == '/sessions/new'  	# ввод логина и пароля
         need_links <<'Вход' 				 	if req == '/users/new'		# регистрация
         need_links <<'Создать сообщение'  		if req == '/messages'		# все сообщения
         need_links <<'Читать сообщения'  		if req == '/messages/new'	# новое сообщение
