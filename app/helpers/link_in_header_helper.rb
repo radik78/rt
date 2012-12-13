@@ -53,9 +53,6 @@ module LinkInHeaderHelper
 
 	end
 
-    def new_feedback
-        @feedback = Feedback.new
-    end 
     
 
 end

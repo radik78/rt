@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 	@user.debpassword = params[:user][:password]
 	if @user.save
 		@message = 'congratulations! you saved in database!'
-    flash[:success] = 'примите поздравления! Теперь Вы можете...'
+    flash[:success] = 'Регистрация прошла успешно!'
     sign_in(@user)
     redirect_to messages_path
 	else

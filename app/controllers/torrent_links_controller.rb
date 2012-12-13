@@ -16,7 +16,11 @@ class TorrentLinksController < ApplicationController
   end
 
   def create
-      if torrent_link = @current_user.torrent_links.create(params[:torrent_link])
+      # debugger
+      #if torrent_link = @current_user.torrent_links.create(params[:torrent_link])
+        torrent_link = @current_user.torrent_links.new(params[:torrent_link])
+        torrent_link.desc = params[:torrent_link][:desc]  #??? почему то приходится этот параметр дописывать в базу вручную
+        if torrent_link.save
          flash[:success] = "#{@current_user.name}, вашa торрент cсылка была добавлена"
         redirect_to :torrent_links
       end   

@@ -1,7 +1,8 @@
 module FeedbacksHelper
 	
-	def znew_feedback
+	def new_feedback
 		@feedback = Feedback.new
+		@feedback.urlpage = request.fullpath
 	end	
 
 end

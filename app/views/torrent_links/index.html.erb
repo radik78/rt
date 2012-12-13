@@ -4,9 +4,19 @@
 	<div class="container">
 		<div class="round messages" >
 			<p class="small_bottom">
-				<%= link_to trnt.file_file_name, trnt.file.url %>
+
+					<% user = trnt.user rescue User.find(trnt.user_id) %>
+					<div class = "time_mess ">
+						<%= "#{user.name} разместил #{trnt.created_at}: #{trnt.desc}" %>
+					</div>
+					<div class = "text_mess ">
+						<%= 	 %>
+						<%= link_to trnt.file_file_name, trnt.file.url %>
+					</div>				
 			</p>
 		</div>		
 	</div>
 
 <% end	%>
+
+

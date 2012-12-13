@@ -8,6 +8,7 @@ class FeedbacksController < ApplicationController
 
   def create
   	@feedback = Feedback.new(params[:feedback])
+
   	if @feedback.save
    	 	flash[:success] = 'спасибо, что поддержали проект'
 	end

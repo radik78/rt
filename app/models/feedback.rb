@@ -1,4 +1,6 @@
 class Feedback < ActiveRecord::Base
+	
+
 end
 # == Schema Information
 #
