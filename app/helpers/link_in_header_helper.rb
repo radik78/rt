@@ -25,12 +25,18 @@ module LinkInHeaderHelper
 
         req = request.fullpath
         deny_links = []
-        deny_links <<'Вход'             <<'Создать сообщение'<<'Читать сообщения'   if req == '/sessions/new'   # ввод логина и пароля
-        deny_links <<'Регистрация'      <<'Создать сообщение'<<'Читать сообщения'   if req == '/users/new'      # регистрация
-        deny_links <<'Читать сообщения'     <<'Вход'<<'Регистрация'                 if req == '/messages'       # все сообщения
-        deny_links <<'Создать сообщение'    <<'Вход'<<'Регистрация'                 if req == '/messages/new'   # новое сообщение
-        deny_links <<'Разместить торрент'   <<'Вход'<<'Регистрация'                 if req == '/torrent_links/new'       # все сообщения
-        deny_links <<'Все торретны'         <<'Вход'<<'Регистрация'                 if req == '/torrent_links'   # новое сообщение
+        deny_links <<'Вход'                        if req == '/sessions/new'   # ввод логина и пароля
+        deny_links <<'Регистрация'                 if req == '/users/new'      # регистрация
+        deny_links <<'Читать сообщения'            if req == '/messages'       # все сообщения
+        deny_links <<'Создать сообщение'           if req == '/messages/new'   # новое сообщение
+        deny_links <<'Разместить торрент'          if req == '/torrent_links/new'       # все сообщения
+        deny_links <<'Все торретны'                if req == '/torrent_links'   # новое сообщение
+
+        if !user_signed?
+            deny_links <<'Читать сообщения'<<'Создать сообщение'<<'Разместить торрент'<<'Все торретны'
+        else
+            deny_links <<'Вход'<<'Регистрация'
+        end
 
 
         deny_links.each do |deny|
@@ -38,11 +44,6 @@ module LinkInHeaderHelper
         end
 
         
-        #need_links <<'Вход' 				 	if req == 
-        #need_links <<'Создать сообщение'  		
-        #need_links <<'Читать сообщения'  		
-
-
         #3 создаем массив хэшей с линками
         arr_data_link = []
         need_links.reverse_each do |need|

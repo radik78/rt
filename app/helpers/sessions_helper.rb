@@ -30,6 +30,11 @@ module SessionsHelper
       	@current_user  ? "Доброго времени суток, #{@current_user.name}! " : "Non loged"
     end
 
+    def user_signed?
+        @current_user
+    end
+
+
 
     def check_access
       if !(find_user_by_id_and_salt)
