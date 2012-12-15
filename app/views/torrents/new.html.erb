@@ -1,0 +1,22 @@
+
+
+
+<%= form_for :torrent, url:{action: :create} do |form| %> 
+
+	
+ 
+
+  <div> 
+  	<%= form.label 'описание:'   %>
+  	<%=  form.text_field :description %>
+  </div>
+  	<br> 
+    
+  <div> 
+  	<%= form.file_field :file, value: 'выбрать' %>  <%= form.submit 'сохранить' %> 
+  </div>
+
+<%  end  %>	
+
+
+

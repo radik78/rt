@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
 	has_many  :messages
 	has_many  :torrent_links
+	has_many  :torrents
 	
 	attr_accessor :password
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212124437) do
+ActiveRecord::Schema.define(:version => 20121215183122) do
 
   create_table "feedbacks", :force => true do |t|
     t.text     "message"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20121212124437) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "torrents", :force => true do |t|
+    t.string   "filename"
+    t.string   "content_type"
+    t.binary   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.text     "description"
   end
 
   create_table "users", :force => true do |t|

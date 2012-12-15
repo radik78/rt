@@ -1,17 +1,19 @@
 
 
-<% @torrent_links.each do |trnt| 	%>
+<% @torrents.each do |trnt| 	%>
 	<div class="container">
 		<div class="round messages" >
 			<p class="small_bottom">
-
+					<%
+					 #debugger
+					  %>
 					<% user = trnt.user rescue User.find(trnt.user_id) %>
 					<div class = "time_mess ">
-						<%= "#{user.name} разместил #{trnt.created_at}: #{trnt.desc}" %>
+						<%= "#{user.name} разместил #{trnt.created_at}: #{trnt.description}" %>
 					</div>
 					<div class = "text_mess ">
 						<%= 	 %>
-						<%= link_to trnt.file_file_name, trnt.file.url %>
+						<%= link_to trnt.filename, torrent_path(trnt.id) %>
 					</div>				
 			</p>
 		</div>		

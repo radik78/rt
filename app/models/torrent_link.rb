@@ -1,9 +1,11 @@
+
 class TorrentLink < ActiveRecord::Base
 
 	belongs_to :user
 	attr_accessible :file
 	has_attached_file :file
 end
+
 # == Schema Information
 #
 # Table name: torrent_links
