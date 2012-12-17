@@ -27,6 +27,9 @@ section h1 {
   font-size: 200%;
 }
 
+
+
+
 /* Links */
 
 a {
@@ -83,6 +86,9 @@ nav ul li a:hover {
 
 
 
+
+
+
 /* Sign up button */
 
 a.signup_button {
@@ -98,6 +104,25 @@ a.signup_button {
   padding: 20px;
 }
 
+
+
+.notate {
+  font-size: 70%;
+  xwidth: 240px;
+  xmargin-left: 20px;
+  xmargin-top: auto;
+  xmargin-bottom: auto;
+  xpadding-left: 20px;
+  
+}
+
+
+.fl_left{
+  float: left;
+  margin-right: 10px;
+  padding-right: 10px;
+
+}
 
 /* Round corners */
 

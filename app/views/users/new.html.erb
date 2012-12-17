@@ -10,16 +10,45 @@
 	
 	
 		<tr>
-			<td><%= f.label 'имя (фио или ник):'					%></td>
-			<td><%= f.text_field :name				%></td>
+			<td>
+					<%= f.label 'фио или ник:'					%>
+			</td>
+			<td>
+				<div>
+					<div class = 'fl_left'>
+						<%= f.text_field :name				%>
+					</div>	
+					<div class = 'notate'>
+						это имя используется для подписи в сообщениях форума 
+					</div>
+				</div>	
+			</td>
 		</tr>
+
+
 		<tr>
-			<td><%= f.label 'е-mail:'					%></td>
-			<td><%= f.text_field :email				%></td>
+			<td>
+				<%= f.label 'е-mail:'					%>
+			</td>
+			<td>
+				<div class = 'fl_left'>
+					<%= f.text_field :email				%>
+				</div>
+				<div class = 'notate'>
+					email используется как логин и не будет виден другим пользователям. Должен содержать символы "@" и "." 
+				</div>
+			</td>
 		</tr>
 		<tr>
 			<td><%= f.label 'пароль:'					%></td>
-			<td><%= f.password_field :password				%></td>
+			<td>
+				<div class = 'fl_left'>
+					<%= f.password_field :password				%>
+				</div>
+				<div class='notate'>
+					пароль должен содержать не менее 6-ти символов 
+				</div>
+			</td>
 		</tr>
 		<tr>
 			<td><%= f.label 'еще раз пароль:'					%></td>

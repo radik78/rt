@@ -20,9 +20,10 @@ class UsersController < ApplicationController
     sign_in(@user)
     redirect_to messages_path
 	else
+    debugger
 		@message = '! trobble in database (probably, uncorrect parametrs of user) !'
     flash[:error] = '! trobble in database (probably, uncorrect parametrs of user) !'
-    redirect_to new_user_path
+    render new_user_path
 	end
   end
 

@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
 	def create
 		
+	#debugger
 		if User.identificate(params[:user][:email], params[:user][:password]) 
 			user = User.find_by_email(params[:user][:email])
 			sign_in(user)
