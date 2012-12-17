@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 	else
     #debugger
 		@message = '! trobble in database (probably, uncorrect parametrs of user) !'
-    flash[:error] = '! trobble in database (probably, uncorrect parametrs of user) !'
+    flash.now[:error] = '! trobble in database (probably, uncorrect parametrs of user) !'
     #@user = User.new
     render new_user_path
 	end

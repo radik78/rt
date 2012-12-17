@@ -7,7 +7,7 @@ module LinkInHeaderHelper
     #1 создаем  массив хэшей:   | ключ | текст ссылки | путь ссылки |
         all_links = 
         [
-            { :text=> 'Вход',                   :path => :new_session },
+            { :text=> 'Главная',                :path => :new_session },
             { :text=> 'Читать сообщения',       :path => :messages },
             { :text=> 'Создать сообщение',      :path => :new_message },
             { :text=> 'Регистрация',            :path => :new_user },
@@ -26,12 +26,13 @@ module LinkInHeaderHelper
 
         req = request.fullpath
         deny_links = []
-        deny_links <<'Вход'                 if req == '/sessions/new'   # ввод логина и пароля
+        deny_links <<'Главная'              if req == '/sessions/new'   # ввод логина и пароля
         deny_links <<'Регистрация'          if req == '/users/new'      # регистрация
+        deny_links <<'Регистрация'          if req == '/users'          # ошибка при регистрации
         deny_links <<'Читать сообщения'     if req == '/messages'       # все сообщения
         deny_links <<'Создать сообщение'    if req == '/messages/new'   # новое сообщение
-        deny_links <<'Добавить торрент'     if req == '/torrents/new'       # все сообщения
-        deny_links <<'Смотреть торренты'    if req == '/torrents'   # новое сообщение
+        deny_links <<'Добавить торрент'     if req == '/torrents/new'   # все сообщения
+        deny_links <<'Смотреть торренты'    if req == '/torrents'       # новое сообщение
 
         if !user_signed?
             deny_links                      \
@@ -41,7 +42,7 @@ module LinkInHeaderHelper
                     <<'Смотреть торренты'
         else
             deny_links                      \
-                    <<'Вход'                \
+                    <<'Главная'             \
                     <<'Регистрация'
         end
 
