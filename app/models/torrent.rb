@@ -12,6 +12,7 @@ class Torrent < ActiveRecord::Base
 		#debugger
 		self.filename = params[:file].original_filename
 		self.content_type = params[:file].content_type
+		self.description = params[:description]
 		self.data = params[:file].read
 	end
 
@@ -26,7 +27,7 @@ class Torrent < ActiveRecord::Base
         #get only the filename, not the whole path (from IE)
         just_filename = File.basename(filename)
         #replace all non-alphanumeric, underscore or periods with underscores
-        just_filename.gsub(/[^\w\.\-]/, '_')
+       # just_filename.gsub(/[^\w\.\-]/, '_')
     end
 
 end

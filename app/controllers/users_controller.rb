@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
 	@user = User.new params[:user]
 	@user.debpassword = params[:user][:password]
+  @user.name.capitalize!
 	if @user.save
 		@message = 'congratulations! you saved in database!'
     flash[:success] = 'Регистрация прошла успешно!'

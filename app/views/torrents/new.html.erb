@@ -8,12 +8,18 @@
 
   <div> 
   	<%= form.label 'описание:'   %>
-  	<%=  form.text_field :description %>
+  	<%=  form.text_area( :description, :size =>"64x3") %>
   </div>
   	<br> 
     
   <div> 
   	<%= form.file_field :file, value: 'выбрать' %>  <%= form.submit 'сохранить' %> 
+  	<%= 
+  	#, accept: 'torrent/(*.torrent)'
+  	%> 
+  </div>
+  <div class = 'notate'>
+		размер файла должен быть в пределах 0,3...60кБ		
   </div>
 
 <%  end  %>	

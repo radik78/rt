@@ -30,8 +30,9 @@ class TorrentsController < ApplicationController
       flash[:success] = 'торрет файл успешно сохранен в базе'
       redirect_to torrents_path
     else
-      flash[:error] = 'при сохранении файла в базу возник ужасный трабл'
-      redirect_to new_torrent_path
+      flash.now[:error] = 'при сохранении файла в базу возник ужасный трабл'
+      @title = 'Загрузка торрент-файла в базу РТ-95-2'
+      render new_torrent_path
 
     end  
   end

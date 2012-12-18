@@ -9,7 +9,7 @@
 					  %>
 					<% user = trnt.user rescue User.find(trnt.user_id) %>
 					<div class = "time_mess ">
-						<%= "#{user.name} разместил #{trnt.created_at}: #{trnt.description}" %>
+						<%= "#{user.name} разместил #{trnt.created_at.strftime("%Y-%m-%d %H:%M")}: #{trnt.description}" %>
 					</div>
 					<div class = "text_mess ">
 						<%= 	 %>

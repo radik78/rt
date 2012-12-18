@@ -3,15 +3,15 @@
 	<% @messages.each do |msg| 	%>
 		<div class="container">
 			<div class="round messages" >
-				<p class="small_bottom">
+				<div class="small_bottom">
 					<% user = msg.user rescue User.find(msg.user_id) %>
 					<div class = "time_mess ">
-						<%= "#{user.name} сообщил в #{msg.created_at}:" %>
+						<%= "#{user.name} сообщил в #{msg.created_at.strftime("%Y-%m-%d %H:%M")}" %>
 					</div>
 					<div class = "text_mess ">
 						<%= msg.text	 %>
 					</div>
-				</p>
+				</div>
 			</div>		
 		</div>
 

@@ -33,5 +33,15 @@ describe  "User Pages" do
 		end
 	end
 
+
+	describe do
+		it "auto capitalize first char" do
+			fill_in :user_name, with: "small first letter"
+			click_button "создать"
+			user = User.last
+			user.name.should == "Small first letter"
+		end
+	end
+
 	
 end

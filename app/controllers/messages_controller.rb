@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 
    def index
 	   @messages = Message.order('updated_at DESC').limit 8
-      @title = 'Сообщения'
+      @title = 'Доска объявлений'
    end
 
    def show
@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 
    def new
 	   @message = Message.new
-      @title = 'Новое сообщение'
+      @title = 'Создание объявления'
    end
 
    def create
