@@ -5,7 +5,7 @@ class Torrent < ActiveRecord::Base
 	validates :data,
 		:presence => true,
 		:confirmation => true,			# that automaticale create password_confirmation attribute
-		:length => {:within => 1.kilobytes..15.kilobytes}
+		:length => {:within => 1.kilobytes..60.kilobytes}
 
 
 	def uploaded_file=(params)
