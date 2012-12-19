@@ -232,15 +232,14 @@ ul.users {
 
 
 .messages {
-  background-color: #fff;
+  background-color: #bbbbbb;
   width: 570px; 
   word-wrap: break-word;
+  margin:  4px;
+  padding: 4px;
+
 }
 
-.small_bottom {
-  margin:0 0 0;
-  padding:0 0 0;
-}
 
 
 .time_mess{
@@ -253,5 +252,11 @@ ul.users {
 	font-size: 12px;
 	color: #121;
   margin-left: 30px;
+}
+
+
+.right_text{
+  text-align: right;  
+  padding-right: 15px;
 }
 
