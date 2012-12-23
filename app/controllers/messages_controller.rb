@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
    before_filter :check_access   #, :only => [:index, :new, :create]
 
    def index
-	   @messages = Message.order('updated_at DESC').limit 8
+	   @messages = Message.order('updated_at DESC').limit 20
       @title = 'Доска объявлений'
    end
 

@@ -39,7 +39,7 @@ class TorrentsController < ApplicationController
 
 
   def index
-  	@torrents  = Torrent.all
+  	@torrents  = Torrent.order('updated_at DESC').limit 20
     @title = 'Обзор торрент ссылок'
   end
 
