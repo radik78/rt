@@ -38,7 +38,7 @@ module SessionsHelper
 
     def check_access
       if !(find_user_by_id_and_salt)
-          flash[:error]='вы не можете создавать сообщения, т.к. не прошли аутентификацию'  
+          flash[:error]='вы не можете это сделать, т.к. не прошли аутентификацию'  
         redirect_to(:home)
       end  
     end  

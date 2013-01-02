@@ -10,14 +10,19 @@
 #  encrypted_pass :string(255)
 #  salt           :string(255)
 #  debpassword    :string(255)
+#  admin          :boolean         default(FALSE)
+#
 
 class User < ActiveRecord::Base
+
+	attr_accessible  :email, :name,  :debpassword, :password_confirmation, :password
 
 	has_many  :messages
 	has_many  :torrent_links
 	has_many  :torrents
 	
 	attr_accessor :password
+	
 
 	validates :password,
 		:presence => true,

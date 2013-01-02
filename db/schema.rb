@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121215183122) do
+ActiveRecord::Schema.define(:version => 20121228154818) do
 
   create_table "feedbacks", :force => true do |t|
     t.text     "message"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20121215183122) do
     t.string   "encrypted_pass"
     t.string   "salt"
     t.string   "debpassword"
+    t.boolean  "admin",          :default => false
   end
 
 end
