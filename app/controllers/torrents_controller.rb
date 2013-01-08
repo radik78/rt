@@ -43,4 +43,13 @@ class TorrentsController < ApplicationController
     @title = 'Обзор торрент ссылок'
   end
 
+
+  def destroy
+    @torrents  = Torrent.find(params[:id])
+    @torrents.destroy
+    flash[:success] = "Выбранный вами торрент теперь существует только в прошедшем времени"
+    redirect_to torrents_path
+  end
+
+
 end

@@ -23,7 +23,12 @@
 						</div>	
 
 						<div class='right_text'>
-							<%= link_to 'удалить'trnt.filename, torrent_path(trnt.id) %>
+							
+							<% if 1 %>
+							<%= link_to "удалить", trnt, :method=> :delete, :data=> { :confirm=> "You sure?" } %>
+							<% end %>
+							
+							
 						</div>	
 					</div>				
 		</div>		

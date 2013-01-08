@@ -3,6 +3,7 @@
 
  вызовы:
  visit '/static_pages/home'
+ visit new_user_path
 
 
  заполнение полей:
@@ -28,5 +29,7 @@ $ lsof -wni tcp:3000
 
 $ kill -9 <<PID>>
 
+
+========================== request DELETE ===================================
 
 
