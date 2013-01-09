@@ -8,8 +8,8 @@ module LinkInHeaderHelper
         all_links = 
         [
             { :text=> 'Главная',                :path => :new_session },
-            { :text=> 'Смотреть объявления',       :path => :messages },
-            { :text=> 'Составить объявление',      :path => :new_message },
+            { :text=> 'Смотреть объявления',    :path => :messages },
+            { :text=> 'Составить объявление',   :path => :new_message },
             { :text=> 'Регистрация',            :path => :new_user },
             { :text=> 'Добавить торрент',       :path => :new_torrent },
             { :text=> 'Смотреть торренты',      :path => :torrents }

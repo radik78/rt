@@ -1,0 +1,22 @@
+
+============================== RSpec =====================================
+
+ вызовы:
+ visit '/static_pages/home'
+ visit new_user_path
+
+
+ заполнение полей:
+ fill :password, with: "qwerqwer"
+
+
+ проверки:
+ page.should have_content('Help')
+ response.status.should be(200)
+ !!! text: 			page.should have_selector('title', :text => "Ruby on Rails Tutorial Sample App | Home")
+ !!! content:     	response.should have_selector 'a', :content=>'удалить'
+
+
+
+
+ 

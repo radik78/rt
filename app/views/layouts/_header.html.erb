@@ -2,6 +2,14 @@
 
     
     <div><%= print_status_sign if Rails.env.development? %></div>
+
+
+    <% # ----------------------  ссылки    -----------------------------# %>
+    <% if user_signed? %>
+    	<nav class="round">
+			<ul><li><%= link_to "Выход", 'sessions/destroy' , :method=> :delete %></li></ul>	
+    	</nav> 
+    <% end %> 
     
     <%  links = link_hash  %>
     <%  links.each do |link| %>
@@ -9,6 +17,21 @@
             <ul><li><%= link_to link[:text], link[:path] %></li></ul>
         </nav>  
     <%  end                 %>
+
+    <% # ----------------------  админ-меню    -----------------------------# %>
+    <% if (user_signed? and @current_user.admin) %>
+    	<div>
+	        <nav class="round">
+	            <ul><li><%= link_to "почта", torrents_path %></li></ul>
+	        </nav>  
+
+	        <nav class="round">
+	            <ul><li><%= link_to "почтаc", feedbacks_path %></li></ul>
+	        </nav>  
+    	</div>
+    <% end %>
+
+
     <div><h2><%= @title %> </h2></div>
 
 </header>

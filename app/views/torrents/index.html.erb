@@ -24,7 +24,7 @@
 
 						<div class='right_text'>
 							
-							<% if 1 %>
+							<% if (@current_user.admin or @current_user==user) %>
 							<%= link_to "удалить", trnt, :method=> :delete, :data=> { :confirm=> "You sure?" } %>
 							<% end %>
 							

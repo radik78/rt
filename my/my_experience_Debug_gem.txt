@@ -1,0 +1,16 @@
+
+ ========================== debug =========================================
+
+
+ Make sure you include the gem in the Gemfile
+
+ gem 'ruby-debug19'
+
+$ lsof -wni tcp:3000
+
+$ kill -9 <<PID>>
+
+
+
+
+

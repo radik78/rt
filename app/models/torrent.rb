@@ -5,8 +5,9 @@ class Torrent < ActiveRecord::Base
 	validates :data,
 		:presence => true,
 		:confirmation => true,			# that automaticale create password_confirmation attribute
-		:length => {:within => 300..130.kilobytes}
+		:length => {:within => 300..130.kilobytes}, :unless => 'admin?'
 
+	
 
 	def uploaded_file=(params)
 		#debugger
@@ -28,6 +29,21 @@ class Torrent < ActiveRecord::Base
         just_filename = File.basename(filename)
         #replace all non-alphanumeric, underscore or periods with underscores
        # just_filename.gsub(/[^\w\.\-]/, '_')
+    end
+
+    def admin?
+    	user = self.user rescue User.find(self.user_id)
+    	
+    	if(user && user.admin)
+    		return true
+    	else
+    		return false
+    	end		
+
+    #	true
+
+					
+
     end
 
 end

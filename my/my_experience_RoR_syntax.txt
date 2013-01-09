@@ -1,0 +1,8 @@
+
+
+========================== request DELETE ===================================
+
+<%= link_to "удалить", trnt, :method=> :delete, :data=> { :confirm=> "You sure?" } %>
+<%= link_to "Выход", signout_path, :method=> :delete %>	
+
+
